@@ -1,0 +1,23 @@
+## Vold 2.0 fstab for tostab03
+
+#######################
+## Regular device mount
+##
+## Format: dev_mount <label> <mount_point> <part> <sysfs_path1...>
+## label        - Label for the volume
+## mount_point  - Where the volume will be mounted
+## part         - Partition # (1 based), or 'auto' for first usable partition.
+## <sysfs_path> - List of sysfs paths to source devices
+######################
+
+# Mounts the first usable partition of the specified device
+dev_mount storage /mnt/sdcard 8 /devices/platform/sdhci-tegra.3/mmc_host/mmc0
+dev_mount sdcard /mnt/sdcard2 auto /devices/platform/sdhci-tegra.2/mmc_host/mmc1
+dev_mount usb0 /mnt/usb0 all /devices/platform/tegra-ehci.*/usb.*/sda
+dev_mount usb1 /mnt/usb1 all /devices/platform/tegra-ehci.*/usb.*/sdb
+dev_mount usb2 /mnt/usb2 all /devices/platform/tegra-ehci.*/usb.*/sdc
+dev_mount usb3 /mnt/usb3 all /devices/platform/tegra-ehci.*/usb.*/sdd
+dev_mount usb4 /mnt/usb4 all /devices/platform/tegra-ehci.*/usb.*/sde
+dev_mount usb5 /mnt/usb5 all /devices/platform/tegra-ehci.*/usb.*/sdf
+dev_mount usb6 /mnt/usb6 all /devices/platform/tegra-ehci.*/usb.*/sdg
+dev_mount usb7 /mnt/usb7 all /devices/platform/tegra-ehci.*/usb.*/sdh
