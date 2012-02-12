@@ -12,14 +12,14 @@ ro.build.type=userdebug
 ro.build.user=root
 ro.build.host=gandhi-OptiPlex-790
 ro.build.tags=test-keys
-ro.product.model=AT100
-ro.product.brand=TOSHIBA
-ro.product.name=tostab03
-ro.product.device=tostab03
-ro.product.board=tostab03
+ro.product.model=Xoom
+ro.product.brand=motorola
+ro.product.name=tervigon
+ro.product.device=wingray
+ro.product.board=
 ro.product.cpu.abi=armeabi-v7a
 ro.product.cpu.abi2=armeabi
-ro.product.manufacturer=TOSHIBA
+ro.product.manufacturer=Motorola
 ro.product.locale.language=en
 ro.product.locale.region=US
 ro.wifi.channels=
@@ -48,6 +48,9 @@ ro.opengles.version = 131072
 #
 # ADDITIONAL_BUILD_PROPERTIES
 #
+
+dalvik.vm.dexopt-data-only=1
+
 ro.rommanager.developerid=cyanogenmod
 keyguard.no_require_sim=true
 ro.url.legal=http://www.google.com/intl/%s/mobile/android/basic/phone-legal.html
@@ -70,24 +73,3 @@ dalvik.vm.lockprof.threshold=500
 dalvik.vm.dexopt-flags=m=y
 net.bt.name=Android
 dalvik.vm.stack-trace-file=/data/anr/traces.txt
-
-
-#added
-
-dalvik.vm.dexopt-data-only=1
-wifi.interface=wlan0
-ro.ethernet.interface=eth0
-ro.ethernet.autoEnable=yes
-ro.toshiba.device_wwan=0
-ro.sf.hwrotation=0
-ro.bootanim.hwrotation=270
-# set the device for controlling the gps
-mbm.gps.config.gps_ctrl=/dev/cdc-wdm0
-# set the device for nmea data
-mbm.gps.config.gps_nmea=/dev/ttyACM2
-# set the desired mode
-# the available options are
-# MEGPS
-# SUPL
-# STANDALONE
-mbm.gps.config.gps_pref_mode=MEGPS
