@@ -1,0 +1,18 @@
+ui_print("Cyanogenmod 9 - Toshiba Thrive Port");
+ui_print("Brought to you by...");
+ui_print("Admiral Chucky");
+
+show_progress(1.000000, 0);
+
+ui_print("  Mounting /system");
+mount("MTD", "system", "/system");
+set_progress(0.100000);
+
+
+
+ui_print("  Unmounting /system");
+unmount("/system");
+set_progress(0.900000);
+
+ui_print("Update complete.");
+set_progress(1.000000);
