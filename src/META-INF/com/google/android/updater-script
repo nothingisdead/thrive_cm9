@@ -1,9 +1,11 @@
 ui_print("");
 ui_print("**********************************************************");
-ui_print("*            CM9 Toshiba Thrive 10 ROM Port              *");
+ui_print("*    CyanogenMod 9 [Beta] Port for Toshiba Thrive 10     *");
 ui_print("**********************************************************");
-ui_print("*         Author: Cyanogen Team                          *");
-ui_print("*           Name: Cyanogen Mod 9                         *");
+ui_print("*Original Author: Cyanogen Team                          *");
+ui_print("*      Port Team: Robert Myers (turnyourbackandrun)      *");
+ui_print("*                 Daniel Marquardt (AdmiralChucky)       *");
+ui_print("*           Name: Cyanogen Mod 9 Beta                    *");
 ui_print("* Version Number: 0.1 ALPHA                              *");
 ui_print("*           Date: 9 March 2012                           *");
 ui_print("**********************************************************");
