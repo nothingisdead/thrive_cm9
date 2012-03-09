@@ -1,8 +1,13 @@
-ui_print("Cyanogenmod 9 - Toshiba Thrive Port");
-ui_print("Brought to you by...");
-ui_print("Admiral Chucky");
-
-show_progress(1.000000, 0);
+ui_print("");
+ui_print("**********************************************************");
+ui_print("*            CM9 Toshiba Thrive 10 ROM Port              *");
+ui_print("**********************************************************");
+ui_print("*         Author: Cyanogen Team                          *");
+ui_print("*           Name: Cyanogen Mod 9                         *");
+ui_print("* Version Number: 0.1 ALPHA                              *");
+ui_print("*           Date: 9 March 2012                           *");
+ui_print("**********************************************************");
+ui_print("");
 
 show_progress(0.100000, 0);
 ui_print("Mounting system partition...");
@@ -15,7 +20,23 @@ delete_recursive("/system");
 ui_print("Done...");
 ui_print("");
 
+ui_print("Mounting data partition...");
+mount("ext4", "EMMC", "/dev/block/platform/sdhci-tegra.3/by-num/p7", "/data");
+ui_print("Done...");
+ui_print("");
+
+ui_print("Clearing data partition...");
+delete_recursive("/data");
+ui_print("Done...");
+ui_print("");
+
 show_progress(0.200000, 0);
+ui_print("Installing data files...");
+package_extract_dir("data", "/data");
+ui_print("Done...");
+ui_print("");
+
+show_progress(0.300000, 0);
 ui_print("Installing system files...");
 package_extract_dir("system", "/system");
 ui_print("Done...");
@@ -179,6 +200,7 @@ set_perm_recursive(0, 0, 0755, 0644, "/system/vendor/firmware");
 set_perm(0, 2000, 0755, "/system/vendor/firmware");
 set_perm_recursive(0, 2000, 0755, 0755, "/system/xbin");
 set_perm(0, 0, 06755, "/system/xbin/su");
+set_perm(0, 0, 06755, "/system/bin/su");
 set_perm(0, 0, 04755, "/system/bin/bash");
 set_perm_recursive(1000, 1000, 0771, 0644, "/data/app");
 ui_print("Done...");
@@ -195,11 +217,11 @@ delete_recursive("/cache");
 ui_print("Done...");
 ui_print("");
 
+show_progress(0.300000, 0);
+
 ui_print("Unmounting partitions...");
 unmount("/system");
+unmount("/data");
 unmount("/cache");
 ui_print("Done...");
 ui_print("");
-
-ui_print("Update complete.");
-set_progress(1.000000);
